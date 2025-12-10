@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       BlogsHQ Admin Toolkit
+ * Plugin Name:       Blogs SEO Toolkit
  * Plugin URI:        https://github.com/codewithsourabh/blogshq
  * Description:       Personal admin tools for BlogsHQ including category logos, TOC, and AI share functionality.
  * Version:           1.3.0
