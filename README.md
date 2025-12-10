@@ -1,4 +1,4 @@
-# BlogsHQ Admin Toolkit - Personal Edition
+# Blogs Toolkit - Personal Edition
 
 Personal WordPress admin toolkit featuring category logos, table of contents, and AI-powered share functionality.
 
