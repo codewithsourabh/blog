@@ -1,0 +1,878 @@
+/**
+ * BlogsHQ Modern Admin Styles
+ *
+ * @package BlogsHQ
+ * @since 1.1.0
+ */
+
+/* ========================================================================
+   CSS Variables - Modern Design System
+   ======================================================================== */
+
+:root {
+	--blogshq-primary: #f2a200;
+	--blogshq-primary-dark: #d18f00;
+	--blogshq-primary-light: #fff4e0;
+	--blogshq-secondary: #2E62E9;
+	--blogshq-secondary-dark: #1e52d9;
+	--blogshq-secondary-light: #e8f0ff;
+
+	--blogshq-gray-50: #f9fafb;
+	--blogshq-gray-100: #f3f4f6;
+	--blogshq-gray-200: #e5e7eb;
+	--blogshq-gray-300: #d1d5db;
+	--blogshq-gray-400: #9ca3af;
+	--blogshq-gray-500: #6b7280;
+	--blogshq-gray-600: #4b5563;
+	--blogshq-gray-700: #374151;
+	--blogshq-gray-800: #1f2937;
+	--blogshq-gray-900: #111827;
+
+	--blogshq-success: #10b981;
+	--blogshq-warning: #f59e0b;
+	--blogshq-error: #ef4444;
+	--blogshq-info: #3b82f6;
+
+	--blogshq-radius-sm: 6px;
+	--blogshq-radius-md: 8px;
+	--blogshq-radius-lg: 12px;
+	--blogshq-radius-xl: 16px;
+
+	--blogshq-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--blogshq-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--blogshq-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	--blogshq-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+	--blogshq-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================================================
+   Admin Wrapper - Clean Canvas
+   ======================================================================== */
+
+.blogshq-admin-wrap {
+	max-width: 1400px;
+	margin: 20px 20px 20px 0;
+	background: #fff;
+	border-radius: var(--blogshq-radius-xl);
+	box-shadow: var(--blogshq-shadow-lg);
+	overflow: hidden;
+}
+
+/* ========================================================================
+   Header Section - Modern & Bold
+   ======================================================================== */
+
+.blogshq-header {
+	background: linear-gradient(135deg, var(--blogshq-primary) 0%, #ff6b00 100%);
+	padding: 32px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.blogshq-header::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -10%;
+	width: 400px;
+	height: 400px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	filter: blur(60px);
+}
+
+.blogshq-header-content {
+	position: relative;
+	z-index: 1;
+}
+
+.blogshq-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: #fff;
+	font-size: 28px;
+	font-weight: 700;
+	margin: 0 0 8px 0;
+	letter-spacing: -0.02em;
+}
+
+.blogshq-logo-icon {
+	flex-shrink: 0;
+	filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.blogshq-subtitle {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 15px;
+	margin: 0;
+	font-weight: 400;
+}
+
+.blogshq-header-actions {
+	display: flex;
+	gap: 12px;
+	position: relative;
+	z-index: 1;
+}
+
+/* ========================================================================
+   Modern Buttons
+   ======================================================================== */
+
+.blogshq-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 20px;
+	border-radius: var(--blogshq-radius-md);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: var(--blogshq-transition);
+	cursor: pointer;
+	border: none;
+	white-space: nowrap;
+}
+
+.blogshq-btn-primary {
+	background: #fff;
+	color: var(--blogshq-primary);
+	box-shadow: var(--blogshq-shadow-md);
+}
+
+.blogshq-btn-primary:hover {
+	background: var(--blogshq-gray-50);
+	transform: translateY(-1px);
+	box-shadow: var(--blogshq-shadow-lg);
+}
+
+.blogshq-btn-secondary {
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.blogshq-btn-secondary:hover {
+	background: rgba(255, 255, 255, 0.25);
+	border-color: rgba(255, 255, 255, 0.3);
+	transform: translateY(-1px);
+}
+
+/* ========================================================================
+   Navigation Tabs - Sleek & Modern
+   ======================================================================== */
+
+.blogshq-nav-tabs {
+	display: flex;
+	gap: 4px;
+	padding: 12px 24px 0;
+	background: var(--blogshq-gray-50);
+	border-bottom: 1px solid var(--blogshq-gray-200);
+	overflow-x: auto;
+}
+
+.blogshq-nav-tab {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	color: var(--blogshq-gray-600);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: var(--blogshq-radius-md) var(--blogshq-radius-md) 0 0;
+	transition: var(--blogshq-transition);
+	position: relative;
+	white-space: nowrap;
+	background: transparent;
+	border: none;
+}
+
+.blogshq-nav-tab:hover {
+	color: var(--blogshq-gray-900);
+	background: rgba(0, 0, 0, 0.02);
+}
+
+.blogshq-nav-tab.active {
+	color: var(--blogshq-primary);
+	background: #fff;
+	box-shadow: var(--blogshq-shadow-sm);
+}
+
+.blogshq-nav-tab.active::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: var(--blogshq-primary);
+	border-radius: 3px 3px 0 0;
+}
+
+.tab-icon {
+	flex-shrink: 0;
+	opacity: 0.7;
+	transition: var(--blogshq-transition);
+}
+
+.blogshq-nav-tab.active .tab-icon {
+	opacity: 1;
+}
+
+/* ========================================================================
+   Tab Content - Spacious & Clean
+   ======================================================================== */
+
+.blogshq-tab-content {
+	padding: 40px;
+	background: #fff;
+	min-height: 500px;
+}
+
+.blogshq-settings-section {
+	max-width: 100%;
+}
+
+.blogshq-settings-section h2 {
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--blogshq-gray-900);
+	margin: 0 0 8px 0;
+	letter-spacing: -0.01em;
+}
+
+.blogshq-settings-section>p {
+	color: var(--blogshq-gray-600);
+	font-size: 15px;
+	margin: 0 0 32px 0;
+	line-height: 1.6;
+}
+
+.blogshq-settings-section h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--blogshq-gray-900);
+	margin: 32px 0 16px;
+}
+
+/* ========================================================================
+   Modern Cards & Info Boxes
+   ======================================================================== */
+
+.blogshq-card {
+	background: #fff;
+	border: 1px solid var(--blogshq-gray-200);
+	border-radius: var(--blogshq-radius-lg);
+	padding: 24px;
+	margin-bottom: 24px;
+	transition: var(--blogshq-transition);
+}
+
+.blogshq-card:hover {
+	border-color: var(--blogshq-gray-300);
+	box-shadow: var(--blogshq-shadow-md);
+}
+
+.blogshq-info-box {
+	background: linear-gradient(135deg, var(--blogshq-secondary-light) 0%, #f0f7ff 100%);
+	border-left: 4px solid var(--blogshq-secondary);
+	border-radius: var(--blogshq-radius-lg);
+	padding: 24px;
+	margin: 24px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.blogshq-info-box::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20px;
+	width: 200px;
+	height: 200px;
+	background: rgba(46, 98, 233, 0.05);
+	border-radius: 50%;
+}
+
+.blogshq-info-box h3 {
+	color: var(--blogshq-secondary-dark);
+	font-size: 16px;
+	font-weight: 700;
+	margin: 0 0 12px;
+}
+
+.blogshq-info-box p {
+	color: var(--blogshq-gray-700);
+	margin: 8px 0;
+	line-height: 1.6;
+}
+
+.blogshq-info-box ul,
+.blogshq-info-box ol {
+	color: var(--blogshq-gray-700);
+	margin: 12px 0 12px 24px;
+	line-height: 1.7;
+}
+
+.blogshq-info-box li {
+	margin: 8px 0;
+}
+
+.blogshq-info-box code {
+	background: rgba(46, 98, 233, 0.1);
+	border: 1px solid rgba(46, 98, 233, 0.2);
+	padding: 4px 10px;
+	border-radius: var(--blogshq-radius-sm);
+	font-size: 13px;
+	font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+	color: var(--blogshq-secondary-dark);
+	font-weight: 600;
+}
+
+/* ========================================================================
+   Shortcode Display Box
+   ======================================================================== */
+
+.blogshq-shortcode-box {
+	background: var(--blogshq-gray-50);
+	border: 2px dashed var(--blogshq-gray-300);
+	border-radius: var(--blogshq-radius-lg);
+	padding: 24px;
+	margin: 24px 0;
+	text-align: center;
+}
+
+.blogshq-shortcode-box code {
+	display: inline-block;
+	background: linear-gradient(135deg, var(--blogshq-primary-light) 0%, #fff9e6 100%);
+	color: var(--blogshq-primary-dark);
+	font-size: 16px;
+	font-weight: 700;
+	padding: 12px 24px;
+	border-radius: var(--blogshq-radius-md);
+	border: 2px solid var(--blogshq-primary);
+	font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+	letter-spacing: 0.02em;
+}
+
+/* ========================================================================
+   Form Tables - Modern Layout
+   ======================================================================== */
+
+.blogshq-toc-settings .form-table,
+.blogshq-settings-section .form-table {
+	margin-top: 24px;
+	background: var(--blogshq-gray-50);
+	border-radius: var(--blogshq-radius-lg);
+	overflow: hidden;
+	border: 1px solid var(--blogshq-gray-200);
+}
+
+.blogshq-toc-settings .form-table tr,
+.blogshq-settings-section .form-table tr {
+	border-bottom: 1px solid var(--blogshq-gray-200);
+}
+
+.blogshq-toc-settings .form-table tr:last-child,
+.blogshq-settings-section .form-table tr:last-child {
+	border-bottom: none;
+}
+
+.blogshq-toc-settings .form-table th,
+.blogshq-settings-section .form-table th {
+	width: 280px;
+	padding: 24px;
+	vertical-align: top;
+	background: #fff;
+	font-weight: 600;
+	color: var(--blogshq-gray-900);
+	font-size: 14px;
+}
+
+.blogshq-toc-settings .form-table td,
+.blogshq-settings-section .form-table td {
+	padding: 24px;
+	background: #fff;
+}
+
+.blogshq-toc-settings .form-table input[type="checkbox"],
+.blogshq-settings-section .form-table input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	margin-right: 8px;
+	cursor: pointer;
+	accent-color: var(--blogshq-primary);
+}
+
+.blogshq-toc-settings .form-table label,
+.blogshq-settings-section .form-table label {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	color: var(--blogshq-gray-700);
+	font-size: 14px;
+	transition: var(--blogshq-transition);
+}
+
+.blogshq-toc-settings .form-table label:hover,
+.blogshq-settings-section .form-table label:hover {
+	color: var(--blogshq-gray-900);
+}
+
+.blogshq-toc-settings .form-table .description,
+.blogshq-settings-section .form-table .description {
+	display: block;
+	margin-top: 12px;
+	color: var(--blogshq-gray-500);
+	font-size: 13px;
+	line-height: 1.5;
+	font-style: normal;
+}
+
+/* Color Picker */
+.blogshq-color-picker {
+	max-width: 120px;
+	height: 40px;
+	border: 2px solid var(--blogshq-gray-300);
+	border-radius: var(--blogshq-radius-md);
+	cursor: pointer;
+	transition: var(--blogshq-transition);
+}
+
+.blogshq-color-picker:hover {
+	border-color: var(--blogshq-primary);
+}
+
+/* ========================================================================
+   Category Logos Table - Modern Grid
+   ======================================================================== */
+
+.blogshq-logos-settings table.widefat {
+	border: 1px solid var(--blogshq-gray-200);
+	border-radius: var(--blogshq-radius-lg);
+	overflow: hidden;
+	margin-top: 24px;
+	box-shadow: var(--blogshq-shadow-sm);
+}
+
+.blogshq-logos-settings table.widefat th {
+	background: var(--blogshq-gray-50);
+	font-weight: 600;
+	color: var(--blogshq-gray-900);
+	padding: 16px;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	border-bottom: 2px solid var(--blogshq-gray-200);
+}
+
+.blogshq-logos-settings table.widefat td {
+	vertical-align: middle;
+	padding: 16px;
+	background: #fff;
+	border-bottom: 1px solid var(--blogshq-gray-100);
+}
+
+.blogshq-logos-settings table.widefat tbody tr:hover td {
+	background: var(--blogshq-gray-50);
+}
+
+.blogshq-logos-settings table.widefat td input[type="url"] {
+	width: 100%;
+	padding: 10px 14px;
+	border: 1px solid var(--blogshq-gray-300);
+	border-radius: var(--blogshq-radius-md);
+	font-size: 14px;
+	transition: var(--blogshq-transition);
+}
+
+.blogshq-logos-settings table.widefat td input[type="url"]:focus {
+	outline: none;
+	border-color: var(--blogshq-primary);
+	box-shadow: 0 0 0 3px rgba(242, 162, 0, 0.1);
+}
+
+.blogshq-logos-settings table.widefat td code {
+	background: var(--blogshq-gray-100);
+	padding: 4px 8px;
+	border-radius: var(--blogshq-radius-sm);
+	font-size: 12px;
+	color: var(--blogshq-gray-700);
+	font-weight: 600;
+}
+
+/* ========================================================================
+   Action Buttons - Modern & Bold
+   ======================================================================== */
+
+.blogshq-settings-section .submit {
+	margin-top: 32px;
+	padding-top: 24px;
+	border-top: 1px solid var(--blogshq-gray-200);
+}
+
+.blogshq-settings-section .button-primary {
+	background: linear-gradient(135deg, var(--blogshq-primary) 0%, var(--blogshq-primary-dark) 100%);
+	border: none;
+	color: #fff;
+	padding: 12px 32px;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: var(--blogshq-radius-md);
+	box-shadow: var(--blogshq-shadow-md);
+	transition: var(--blogshq-transition);
+	cursor: pointer;
+	height: auto;
+	text-shadow: none;
+}
+
+.blogshq-settings-section .button-primary:hover,
+.blogshq-settings-section .button-primary:focus {
+	background: linear-gradient(135deg, var(--blogshq-primary-dark) 0%, #b87700 100%);
+	transform: translateY(-2px);
+	box-shadow: var(--blogshq-shadow-lg);
+}
+
+.blogshq-settings-section .button-primary:active {
+	transform: translateY(0);
+	box-shadow: var(--blogshq-shadow-md);
+}
+
+/* ========================================================================
+   Notices - Modern Alerts
+   ======================================================================== */
+
+.blogshq-admin-wrap .notice {
+	margin: 20px 0;
+	padding: 16px 20px;
+	border-left: 4px solid;
+	border-radius: var(--blogshq-radius-md);
+	background: #fff;
+	box-shadow: var(--blogshq-shadow-sm);
+}
+
+.blogshq-admin-wrap .notice-success {
+	border-left-color: var(--blogshq-success);
+	background: #f0fdf4;
+	width: 1150px;
+}
+
+.blogshq-admin-wrap .notice-error {
+	border-left-color: var(--blogshq-error);
+	background: #fef2f2;
+}
+
+.blogshq-admin-wrap .notice-warning {
+	border-left-color: var(--blogshq-warning);
+	background: #fffbeb;
+}
+
+.blogshq-admin-wrap .notice-info {
+	border-left-color: var(--blogshq-info);
+	background: #eff6ff;
+}
+
+.blogshq-admin-wrap .notice p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* ========================================================================
+   Loading States
+   ======================================================================== */
+/* Enhanced loading state with spinner */
+.blogshq-loading {
+	opacity: 0.6;
+	pointer-events: none;
+	position: relative;
+	min-height: 200px;
+}
+
+.blogshq-loading::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	margin: -20px 0 0 -20px;
+	border: 4px solid var(--blogshq-gray-200);
+	border-top-color: var(--blogshq-primary);
+	border-radius: 50%;
+	animation: blogshq-spin 0.8s linear infinite;
+	z-index: 1000;
+}
+
+/* Smooth transition for tab content */
+.blogshq-tab-content {
+	transition: opacity 0.2s ease-in-out;
+}
+
+.blogshq-tab-content.blogshq-loading {
+	opacity: 0.5;
+}
+
+/* Notice animations */
+.notice {
+	animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.blogshq-loading::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	margin: -16px 0 0 -16px;
+	border: 3px solid var(--blogshq-primary-light);
+	border-top-color: var(--blogshq-primary);
+	border-radius: 50%;
+	animation: blogshq-spin 0.8s linear infinite;
+}
+
+@keyframes blogshq-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* ========================================================================
+   Responsive Design
+   ======================================================================== */
+
+@media screen and (max-width: 1024px) {
+	.blogshq-admin-wrap {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	.blogshq-header {
+		padding: 24px 24px;
+		flex-direction: column;
+		gap: 20px;
+		align-items: flex-start;
+	}
+
+	.blogshq-header-actions {
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	.blogshq-btn {
+		flex: 1;
+		justify-content: center;
+		min-width: 140px;
+	}
+
+	.blogshq-tab-content {
+		padding: 24px;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.blogshq-header {
+		padding: 20px 16px;
+	}
+
+	.blogshq-title {
+		font-size: 22px;
+	}
+
+	.blogshq-subtitle {
+		font-size: 14px;
+	}
+
+	.blogshq-nav-tabs {
+		padding: 8px 16px 0;
+		gap: 2px;
+	}
+
+	.blogshq-nav-tab {
+		padding: 10px 16px;
+		font-size: 13px;
+	}
+
+	.tab-icon {
+		width: 16px;
+		height: 16px;
+	}
+
+	.blogshq-tab-content {
+		padding: 20px 16px;
+	}
+
+	.blogshq-logos-settings table.widefat th,
+	.blogshq-logos-settings table.widefat td {
+		display: table-cell;
+		padding: 12px;
+		font-size: 13px;
+	}
+
+	.blogshq-toc-settings .form-table th,
+	.blogshq-settings-section .form-table th {
+		width: 100%;
+		display: block;
+		padding: 16px 16px 8px;
+	}
+
+	.blogshq-toc-settings .form-table td,
+	.blogshq-settings-section .form-table td {
+		display: block;
+		padding: 8px 16px 16px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.blogshq-logo-icon {
+		width: 28px;
+		height: 28px;
+	}
+
+	.blogshq-title {
+		font-size: 20px;
+	}
+
+	.blogshq-nav-tab span {
+		display: none;
+	}
+
+	.blogshq-nav-tab {
+		padding: 12px;
+		justify-content: center;
+		flex: 1;
+	}
+
+	.tab-icon {
+		margin: 0;
+	}
+
+	.blogshq-logos-settings table.widefat thead {
+		display: none;
+	}
+
+	.blogshq-logos-settings table.widefat,
+	.blogshq-logos-settings table.widefat tbody,
+	.blogshq-logos-settings table.widefat tr,
+	.blogshq-logos-settings table.widefat td {
+		display: block;
+		width: 100%;
+	}
+
+	.blogshq-logos-settings table.widefat tr {
+		margin-bottom: 16px;
+		border: 1px solid var(--blogshq-gray-200);
+		border-radius: var(--blogshq-radius-md);
+		overflow: hidden;
+	}
+
+	.blogshq-logos-settings table.widefat td {
+		text-align: left;
+		padding: 12px 16px;
+		border-bottom: 1px solid var(--blogshq-gray-100);
+		position: relative;
+	}
+
+	.blogshq-logos-settings table.widefat td:last-child {
+		border-bottom: none;
+	}
+
+	.blogshq-logos-settings table.widefat td::before {
+		content: attr(data-label);
+		font-weight: 600;
+		color: var(--blogshq-gray-700);
+		display: block;
+		margin-bottom: 6px;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+}
+
+/* ========================================================================
+   Enhanced Animations
+   ======================================================================== */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.blogshq-tab-content {
+	animation: fadeIn 0.3s ease-out;
+}
+
+.blogshq-card,
+.blogshq-info-box {
+	animation: fadeIn 0.4s ease-out;
+}
+
+/* ========================================================================
+   Focus Styles - Accessibility
+   ======================================================================== */
+
+.blogshq-nav-tab:focus,
+.blogshq-btn:focus,
+input[type="url"]:focus,
+input[type="checkbox"]:focus,
+.blogshq-color-picker:focus {
+	outline: 2px solid var(--blogshq-primary);
+	outline-offset: 2px;
+}
+
+/* ========================================================================
+   Dark Mode Support (Optional)
+   ======================================================================== */
+
+@media (prefers-color-scheme: dark) {
+	/* You can add dark mode styles here if needed */
+	/* This is optional and can be enabled based on user preference */
+}
+
+/* ========================================================================
+   Print Styles
+   ======================================================================== */
+
+@media print {
+
+	.blogshq-header-actions,
+	.blogshq-nav-tabs,
+	.submit {
+		display: none !important;
+	}
+
+	.blogshq-admin-wrap {
+		box-shadow: none;
+		border: 1px solid #ddd;
+	}
+}

@@ -1,0 +1,35 @@
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Node/npm
+node_modules/
+package-lock.json
+
+# Composer
+vendor/
+
+# Keep lib folder for Plugin Update Checker
+!lib/
+!lib/plugin-update-checker/
+
+# Build/output
+dist/
+*.log
+
+# Tests
+tests/
+
+# Release builds (optional - if you want to exclude local builds)
+*.zip
+
+# Local WordPress environment
+wp-content/
+wp-config.php
+wp-admin/
+wp-includes/
+
+# Compiled/minified files are kept in repo for direct GitHub installs
+# But source files should be tracked
